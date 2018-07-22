@@ -22,7 +22,7 @@ jobs:
           name: Push application Docker image
           command: |
             docker login -u $DOCKER_HUB_USER_ID -p $DOCKER_HUB_PWD
-            docker tag dockerexample_myapp_1 $DOCKER_HUB_USER_ID/docker-example:$CIRCLE_SHA1
-            docker tag dockerexample_myapp_1 $DOCKER_HUB_USER_ID/docker-example:latest
+            docker tag dockerexample_myapp $DOCKER_HUB_USER_ID/docker-example:$CIRCLE_SHA1
+            docker tag dockerexample_myapp $DOCKER_HUB_USER_ID/docker-example:latest
             docker push $DOCKER_HUB_USER_ID/docker-example:$CIRCLE_SHA1
             docker push $DOCKER_HUB_USER_ID/docker-example:latest
